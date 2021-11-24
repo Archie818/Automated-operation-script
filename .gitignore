@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+env/
+mvpenv/
+SEEnv/
+.vscode/
+使用说明书.docx
