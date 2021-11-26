@@ -38,7 +38,7 @@ def mouseClick(clickTimes,lOrR,img,reTry):
 
 
 # 数据检查
-# cmdType.value  1.0 左键单击    2.0 左键双击  3.0 右键单击  4.0 输入  5.0 等待  6.0 滚轮
+# cmdType.value  1.0 左键单击    2.0 左键双击  3.0 右键单击  4.0 输入  5.0 Wait  6.0 滚轮
 # ctype     空：0
 #           字符串：1
 #           数字：2
@@ -98,7 +98,7 @@ def mainWork(img):
             if sheet1.row(i)[2].ctype == 2 and sheet1.row(i)[2].value != 0:
                 reTry = sheet1.row(i)[2].value
             mouseClick(1,"left",img,reTry)
-            print("单击左键",img)
+            print("Click",img)
         #2代表双击左键
         elif cmdType.value == 2.0:
             #取图片名称
@@ -131,7 +131,7 @@ def mainWork(img):
             #取图片名称
             waitTime = sheet1.row(i)[1].value
             time.sleep(waitTime)
-            print("等待",waitTime,"秒")
+            print("Wait",waitTime,"秒")
         #6代表滚轮
         elif cmdType.value == 6.0:
             #取图片名称
@@ -142,7 +142,7 @@ def mainWork(img):
         elif cmdType.value == 7.0:
             #取图片名称
             pyautogui.press('enter')
-            print("回车")                   
+            print("Enter")                   
         i += 1
         
 
@@ -156,14 +156,16 @@ if __name__ == '__main__':
     #数据检查
     checkCmd = dataCheck(sheet1)
     if checkCmd:
-        key=input('选择功能: 1.Once 2.Always \n')
-        if key=='1':
-            #循环拿出每一行指令
+        # key=input('Cycle times:  \n')
+        # key = int(key)
+        # while key > 0:
+        #     mainWork(sheet1)
+        #     key-=1
+        #     time.sleep(0.1)
+        #     print("Wait 0.1s")  
+        while 1 > 0:
             mainWork(sheet1)
-        elif key=='2':
-            while True:
-                mainWork(sheet1)
-                time.sleep(0.1)
-                print("等待0.1秒")    
+            time.sleep(0.1)
+            print("Wait 0.1s")  
     else:
-        print('输入有误或者已经退出!')
+        print('error!')

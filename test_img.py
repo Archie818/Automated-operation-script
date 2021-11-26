@@ -1,7 +1,7 @@
 import pyautogui
 
-from subprocess import call
-call(["screencapture", "screenshot.jpg"])
+# from subprocess import call
+# call(["screencapture", "screenshot.jpg"])
 
 
 im1 = pyautogui.screenshot()
