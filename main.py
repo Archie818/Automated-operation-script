@@ -5,9 +5,6 @@ import pyperclip
 
 #定义鼠标事件
 
-#pyautogui库其他用法 https://blog.csdn.net/qingfengxd1/article/details/108270159
-
-
 def mouseClick(clickTimes,lOrR,img,reTry):
     if reTry == 1:
         while True:
